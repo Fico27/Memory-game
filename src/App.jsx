@@ -1,9 +1,12 @@
 import "./App.css";
+import Header from "./components/header";
+import CardContainer from "./components/card-container";
 
 function App() {
   return (
     <>
-      <h1>Start of memory game</h1>
+      <Header />
+      <CardContainer />
     </>
   );
 }
