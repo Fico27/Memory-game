@@ -15,11 +15,9 @@ const randomPokemon = [
   "infernape",
 ];
 
-function CardContainer() {
+function CardContainer({ score, setScore, highScore, setHighScore }) {
   const [pokemonData, setPokemonData] = useState([]);
   const [clickedPokemon, setClickedPokemon] = useState([]);
-  const [score, setScore] = useState([]);
-  const [highScore, setHighScore] = useState(0);
 
   function handleClick(name) {
     if (clickedPokemon.includes(name)) {
@@ -29,6 +27,10 @@ function CardContainer() {
       setClickedPokemon((prev) => [...prev, name]);
       const newScore = score + 1;
       setScore(newScore);
+    }
+
+    if (score > highScore) {
+      setHighScore(score);
     }
 
     setPokemonData((prev) => shuffleArray(prev));
@@ -60,7 +62,11 @@ function CardContainer() {
   return (
     <div className="cardContainer">
       {pokemonData.map((pokemon) => (
-        <div className="card" key={pokemon.name}>
+        <div
+          className="card"
+          key={pokemon.name}
+          onClick={() => handleClick(pokemon.name)}
+        >
           <img className="img" src={pokemon.image}></img>
           <br />
           <span>{pokemon.name}</span>
