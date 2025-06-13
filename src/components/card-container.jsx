@@ -27,10 +27,9 @@ function CardContainer({ score, setScore, highScore, setHighScore }) {
       setClickedPokemon((prev) => [...prev, name]);
       const newScore = score + 1;
       setScore(newScore);
-    }
-
-    if (score > highScore) {
-      setHighScore(score);
+      if (newScore > highScore) {
+        setHighScore(newScore);
+      }
     }
 
     setPokemonData((prev) => shuffleArray(prev));
