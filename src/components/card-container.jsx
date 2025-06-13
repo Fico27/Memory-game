@@ -30,6 +30,13 @@ function CardContainer() {
       const newScore = score + 1;
       setScore(newScore);
     }
+
+    setPokemonData((prev) => shuffleArray(prev));
+  }
+
+  function shuffleArray(array) {
+    const newArray = [...array];
+    return newArray.sort(() => Math.random() - 0.5);
   }
 
   useEffect(() => {
