@@ -66,9 +66,11 @@ function CardContainer({ score, setScore, highScore, setHighScore }) {
           key={pokemon.name}
           onClick={() => handleClick(pokemon.name)}
         >
-          <img className="img" src={pokemon.image}></img>
+          <img className="pokemonImg" src={pokemon.image}></img>
           <br />
-          <span>{pokemon.name}</span>
+          <span className="pokemonName">
+            {pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}
+          </span>
         </div>
       ))}
     </div>

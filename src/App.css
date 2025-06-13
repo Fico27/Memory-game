@@ -9,30 +9,68 @@ body,
 
 html {
   background-image: url("https://wallpaperaccess.com/full/3551101.png");
-  background-size: 100% 100%;
+  background-size: fill;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.headerContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.score {
+  font-weight: bold;
+  font-size: 1.5rem;
 }
 
 .cardContainer {
-  width: 100%;
+  max-width: 2000px;
   height: 100%;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 25px;
   margin: 1rem 1em;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
 .card {
-  width: 250px;
-  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+  height: 350px;
   border: 2px solid black;
+  background-color: rgba(59, 76, 202, 0.9);
+}
+
+.card:hover {
+  box-shadow: 0 0 15px 5px #b3a125;
+}
+.pokemonHeader {
+  margin: 1rem 0;
+  color: #3b4cca;
+  font-size: 4rem;
+  text-shadow: 0 0 4px #ffde00, 0 0 4px #ffde00, 0 0 5px #ffde00;
+}
+
+.pokemonName {
+  color: #ffde00;
+  font-size: 2rem;
 }
 
 header {
   width: 100%;
 }
 
-.img {
-  width: 100px;
+.pokemonImg {
+  width: 125px;
 }
