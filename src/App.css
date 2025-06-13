@@ -1,9 +1,15 @@
+html,
+body,
 #root {
-  margin: 0 0;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
 
-  text-align: center;
-  height: 100vh;
-  width: 100vw;
+html {
+  background-image: url("https://wallpaperaccess.com/full/3551101.png");
+  background-size: 100% 100%;
 }
 
 .cardContainer {
