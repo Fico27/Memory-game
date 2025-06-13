@@ -17,6 +17,20 @@ const randomPokemon = [
 
 function CardContainer() {
   const [pokemonData, setPokemonData] = useState([]);
+  const [clickedPokemon, setClickedPokemon] = useState([]);
+  const [score, setScore] = useState([]);
+  const [highScore, setHighScore] = useState(0);
+
+  function handleClick(name) {
+    if (clickedPokemon.includes(name)) {
+      setScore(0);
+      setClickedPokemon([]);
+    } else {
+      setClickedPokemon((prev) => [...prev, name]);
+      const newScore = score + 1;
+      setScore(newScore);
+    }
+  }
 
   useEffect(() => {
     const getPokemon = async () => {
